@@ -22,3 +22,6 @@ var shapeArr = [Shape]()
 shapeArr.append(Circle(shapeName: "원"))
 shapeArr.append(Rectangle(shapeName: "사각형"))
 
+for shape in shapeArr {
+    shape.draw()
+}
