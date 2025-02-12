@@ -26,7 +26,7 @@ struct NavigationExampleView: View {
             }
             .padding(.horizontal)
             .navigationTitle("메인 화면")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.large)
             Spacer()
         }
     }
