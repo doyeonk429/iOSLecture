@@ -7,43 +7,19 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		166226332D5B22F9005091C4 /* SwiftUIDay02product.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIDay02product.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		166226822D5C3806005091C4 /* SwiftUIDay03Lecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIDay03Lecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		166226672D5B4519005091C4 /* Exceptions for "SwiftUIDay02product" folder in "SwiftUIDay02product" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Resources/ProductData.json,
-			);
-			target = 166226322D5B22F9005091C4 /* SwiftUIDay02product */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		166226682D5B4519005091C4 /* Exceptions for "SwiftUIDay02product" folder in "Compile Sources" phase from "SwiftUIDay02product" target */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			buildPhase = 1662262F2D5B22F9005091C4 /* Sources */;
-			membershipExceptions = (
-				Resources/ProductData.json,
-			);
-		};
-/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		166226352D5B22F9005091C4 /* SwiftUIDay02product */ = {
+		166226842D5C3806005091C4 /* SwiftUIDay03Lecture */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				166226672D5B4519005091C4 /* Exceptions for "SwiftUIDay02product" folder in "SwiftUIDay02product" target */,
-				166226682D5B4519005091C4 /* Exceptions for "SwiftUIDay02product" folder in "Compile Sources" phase from "SwiftUIDay02product" target */,
-			);
-			path = SwiftUIDay02product;
+			path = SwiftUIDay03Lecture;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		166226302D5B22F9005091C4 /* Frameworks */ = {
+		1662267F2D5C3806005091C4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -53,18 +29,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1662262A2D5B22F9005091C4 = {
+		166226792D5C3806005091C4 = {
 			isa = PBXGroup;
 			children = (
-				166226352D5B22F9005091C4 /* SwiftUIDay02product */,
-				166226342D5B22F9005091C4 /* Products */,
+				166226842D5C3806005091C4 /* SwiftUIDay03Lecture */,
+				166226832D5C3806005091C4 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		166226342D5B22F9005091C4 /* Products */ = {
+		166226832D5C3806005091C4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				166226332D5B22F9005091C4 /* SwiftUIDay02product.app */,
+				166226822D5C3806005091C4 /* SwiftUIDay03Lecture.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,64 +48,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		166226322D5B22F9005091C4 /* SwiftUIDay02product */ = {
+		166226812D5C3806005091C4 /* SwiftUIDay03Lecture */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 166226412D5B22FB005091C4 /* Build configuration list for PBXNativeTarget "SwiftUIDay02product" */;
+			buildConfigurationList = 166226902D5C3808005091C4 /* Build configuration list for PBXNativeTarget "SwiftUIDay03Lecture" */;
 			buildPhases = (
-				1662262F2D5B22F9005091C4 /* Sources */,
-				166226302D5B22F9005091C4 /* Frameworks */,
-				166226312D5B22F9005091C4 /* Resources */,
+				1662267E2D5C3806005091C4 /* Sources */,
+				1662267F2D5C3806005091C4 /* Frameworks */,
+				166226802D5C3806005091C4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				166226352D5B22F9005091C4 /* SwiftUIDay02product */,
+				166226842D5C3806005091C4 /* SwiftUIDay03Lecture */,
 			);
-			name = SwiftUIDay02product;
+			name = SwiftUIDay03Lecture;
 			packageProductDependencies = (
 			);
-			productName = SwiftUIDay02product;
-			productReference = 166226332D5B22F9005091C4 /* SwiftUIDay02product.app */;
+			productName = SwiftUIDay03Lecture;
+			productReference = 166226822D5C3806005091C4 /* SwiftUIDay03Lecture.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1662262B2D5B22F9005091C4 /* Project object */ = {
+		1662267A2D5C3806005091C4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					166226322D5B22F9005091C4 = {
+					166226812D5C3806005091C4 = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
-			buildConfigurationList = 1662262E2D5B22F9005091C4 /* Build configuration list for PBXProject "SwiftUIDay02product" */;
+			buildConfigurationList = 1662267D2D5C3806005091C4 /* Build configuration list for PBXProject "SwiftUIDay03Lecture" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 1662262A2D5B22F9005091C4;
+			mainGroup = 166226792D5C3806005091C4;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 166226342D5B22F9005091C4 /* Products */;
+			productRefGroup = 166226832D5C3806005091C4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				166226322D5B22F9005091C4 /* SwiftUIDay02product */,
+				166226812D5C3806005091C4 /* SwiftUIDay03Lecture */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		166226312D5B22F9005091C4 /* Resources */ = {
+		166226802D5C3806005091C4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -139,7 +115,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1662262F2D5B22F9005091C4 /* Sources */ = {
+		1662267E2D5C3806005091C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -149,7 +125,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		1662263F2D5B22FB005091C4 /* Debug */ = {
+		1662268E2D5C3808005091C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -212,7 +188,7 @@
 			};
 			name = Debug;
 		};
-		166226402D5B22FB005091C4 /* Release */ = {
+		1662268F2D5C3808005091C4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -268,14 +244,14 @@
 			};
 			name = Release;
 		};
-		166226422D5B22FB005091C4 /* Debug */ = {
+		166226912D5C3808005091C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIDay02product/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIDay03Lecture/Preview Content\"";
 				DEVELOPMENT_TEAM = 83K577A944;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -289,7 +265,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.doyeonkim.SwiftUIDay02product;
+				PRODUCT_BUNDLE_IDENTIFIER = com.doyeonkim.SwiftUIDay03Lecture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -297,14 +273,14 @@
 			};
 			name = Debug;
 		};
-		166226432D5B22FB005091C4 /* Release */ = {
+		166226922D5C3808005091C4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIDay02product/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIDay03Lecture/Preview Content\"";
 				DEVELOPMENT_TEAM = 83K577A944;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -318,7 +294,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.doyeonkim.SwiftUIDay02product;
+				PRODUCT_BUNDLE_IDENTIFIER = com.doyeonkim.SwiftUIDay03Lecture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -329,25 +305,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1662262E2D5B22F9005091C4 /* Build configuration list for PBXProject "SwiftUIDay02product" */ = {
+		1662267D2D5C3806005091C4 /* Build configuration list for PBXProject "SwiftUIDay03Lecture" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1662263F2D5B22FB005091C4 /* Debug */,
-				166226402D5B22FB005091C4 /* Release */,
+				1662268E2D5C3808005091C4 /* Debug */,
+				1662268F2D5C3808005091C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		166226412D5B22FB005091C4 /* Build configuration list for PBXNativeTarget "SwiftUIDay02product" */ = {
+		166226902D5C3808005091C4 /* Build configuration list for PBXNativeTarget "SwiftUIDay03Lecture" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				166226422D5B22FB005091C4 /* Debug */,
-				166226432D5B22FB005091C4 /* Release */,
+				166226912D5C3808005091C4 /* Debug */,
+				166226922D5C3808005091C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1662262B2D5B22F9005091C4 /* Project object */;
+	rootObject = 1662267A2D5C3806005091C4 /* Project object */;
 }
