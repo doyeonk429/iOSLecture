@@ -11,7 +11,7 @@ struct BindingEx: View {
     @State private var isOn = false
     var body: some View {
         VStack(spacing: 16) {
-            Text("isOn : \(isOn)")
+            Text("Parent's isOn : \(isOn)")
                 .font(.title)
                 .foregroundStyle(.cyan)
             ToggleView(isOn: $isOn)
@@ -22,8 +22,15 @@ struct BindingEx: View {
 struct ToggleView: View {
     @Binding var isOn: Bool
     var body: some View {
-        Toggle("switch", isOn: $isOn)
-            .padding(.horizontal, 20)
+        VStack(spacing: 8) {
+            Toggle("switch", isOn: $isOn)
+                .padding(.horizontal, 20)
+            Text("child's isOn : \(isOn)")
+                .font(.body)
+                .fontWeight(.semibold)
+                .foregroundStyle(.gray)
+        }
+
     }
 }
 
