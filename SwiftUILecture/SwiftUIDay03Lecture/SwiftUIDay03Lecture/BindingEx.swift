@@ -22,15 +22,14 @@ struct BindingEx: View {
 struct ToggleView: View {
     @Binding var isOn: Bool
     var body: some View {
-        VStack(spacing: 8) {
+        VStack(alignment: .leading, spacing: 8) {
             Toggle("switch", isOn: $isOn)
-                .padding(.horizontal, 20)
             Text("child's isOn : \(isOn)")
                 .font(.body)
                 .fontWeight(.semibold)
                 .foregroundStyle(.gray)
         }
-
+        .padding(.horizontal, 20)
     }
 }
 
