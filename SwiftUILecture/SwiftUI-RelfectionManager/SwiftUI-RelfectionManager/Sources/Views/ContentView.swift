@@ -8,31 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var vm = ReflectionViewModel()
+    @EnvironmentObject var toastVM: ToastMessageVM
+    @EnvironmentObject var reflVM: ReflectionViewModel
+    
     var body: some View {
         NavigationStack {
-            List(vm.reflections) { refl in
+            List(reflVM.reflections) { refl in
                 NavigationLink {
                     // destination
                     ReflDetailView(reflection: refl)
                 } label: {
-                    VStack(alignment: .leading) {
-                        Text(refl.date, style: .date)
-                            .font(.headline)
-                        Text(refl.content)
-                            .font(.subheadline)
-                            .lineLimit(1)
-                            .foregroundStyle(.gray)
-                    }
+                    ReflectionRow(reflection: refl)
                 }
             }
             .overlay(content: {
                 Group {
-                    if vm.reflections.isEmpty {
-                        Text("작성된 회고가 없습니다.")
-                            .font(.title3)
-                            .foregroundColor(.gray)
-                            .padding(.bottom, 50)
+                    if reflVM.reflections.isEmpty {
+                        emptyStateView
                     }
                 }
             })
@@ -42,7 +34,6 @@ struct ContentView: View {
                 NavigationLink {
                     // dest
                     NewReflView()
-                        .environmentObject(vm)
                 } label: {
                     Image(systemName: "plus")
                         .tint(.green)
@@ -50,11 +41,21 @@ struct ContentView: View {
             }
         }
         .onAppear {
-            vm.fetchReflections()
+            reflVM.fetchReflections()
         }
+    }
+    
+    private var emptyStateView: some View {
+        Text("작성된 회고가 없습니다.")
+            .font(.title3)
+            .foregroundColor(.gray)
+            .padding(.bottom, 50)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
     }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(ReflectionViewModel())
+        .environmentObject(ToastMessageVM())
 }

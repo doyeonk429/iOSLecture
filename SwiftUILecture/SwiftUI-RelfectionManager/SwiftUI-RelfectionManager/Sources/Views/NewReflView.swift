@@ -9,7 +9,9 @@ import SwiftUI
 
 struct NewReflView: View {
     @State private var content : String = ""
-    @EnvironmentObject var vm : ReflectionViewModel
+    @EnvironmentObject var toastVM: ToastMessageVM
+    @EnvironmentObject var reflVM: ReflectionViewModel
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         VStack {
@@ -25,11 +27,18 @@ struct NewReflView: View {
             Button {
                 // action
                 let newRefl = Reflection(date: Date(), content: content)
-                vm.reflections.append(newRefl)
-                vm.saveReflections()
+                reflVM.reflections.append(newRefl)
                 
-                // 내용 초기화
-                content = ""
+                Task {
+                    let isSuccess = reflVM.saveReflections()
+                    
+                    if isSuccess {
+                        await toastVM.showToastMessage("회고 저장 성공")
+                        dismiss()
+                    } else {
+                        await toastVM.showToastMessage("회고 저장 실패")
+                    }
+                }
             } label: {
                 // label
                 Text("회고 저장하기")
@@ -42,9 +51,17 @@ struct NewReflView: View {
             }
         } // : vstack
         .padding()
+        .overlay {
+            Group {
+                if toastVM.showToast {
+                    ToastView(message: toastVM.toastMessage)
+                }
+            }
+        }
     }
 }
 
 #Preview {
     NewReflView()
+        .environmentObject(ToastMessageVM())
 }

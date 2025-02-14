@@ -11,10 +11,12 @@ class ReflectionViewModel: ObservableObject {
     @Published var reflections: [Reflection] = []
     private let userDefaultsKey = Constants.UserDefaultsKey.reflectionVMKey
     
-    func saveReflections() {
+    func saveReflections() -> Bool {
         if let encodedData = try? JSONEncoder().encode(reflections) {
             UserDefaults.standard.set(encodedData, forKey: userDefaultsKey)
+            return true
         }
+        return false
     }
     
     func fetchReflections() {
