@@ -14,7 +14,9 @@ struct ReflDetailView: View {
         VStack(alignment: .leading, spacing: 20) {
             Text(reflection.date, style: .date)
                 .font(.headline)
+                .frame(maxWidth: .infinity, alignment: .leading)
             Text(reflection.content)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .font(.body)
             Spacer()
         } // : vstack
@@ -24,5 +26,5 @@ struct ReflDetailView: View {
 }
 
 #Preview {
-    ReflDetailView(reflection: Reflection(date: Date(), content: "This is a test reflection. is a test reflection.This is a test reflection.This is a test reflection.This is a test reflection.This is a test reflection.This is a test reflection.This is a test reflection.This is a test reflection."))
+    ReflDetailView(reflection: Reflection(date: Date(), content: "text"))
 }

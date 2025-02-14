@@ -8,7 +8,9 @@
 import Foundation
 
 class ReflectionViewModel: ObservableObject {
-    @Published var reflections: [Reflection] = []
+    @Published var reflections: [Reflection] = [
+        Reflection(date: Date(), content: "test1")
+    ]
     private let userDefaultsKey = Constants.UserDefaultsKey.reflectionVMKey
     
     func saveReflections() {
