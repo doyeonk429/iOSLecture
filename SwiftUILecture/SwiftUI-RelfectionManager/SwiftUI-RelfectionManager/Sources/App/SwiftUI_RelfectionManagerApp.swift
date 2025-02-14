@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct SwiftUI_RelfectionManagerApp: App {
+    @StateObject var toastVM = ToastMessageVM()
+    @StateObject var reflVM = ReflectionViewModel()
+    
     var body: some Scene {
         WindowGroup {
             AuthenticationView()
+                .environmentObject(toastVM)
+                .environmentObject(reflVM)
         }
     }
 }

@@ -17,7 +17,6 @@ class BiometricAuthVM: ObservableObject {
         
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
             let reason = "회고 목록을 열람하려면 인증이 필요합니다."
-            
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { isSuccess, authError in
                 DispatchQueue.main.async {
                     if isSuccess {

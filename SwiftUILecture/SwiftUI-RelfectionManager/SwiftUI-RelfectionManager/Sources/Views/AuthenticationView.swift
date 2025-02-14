@@ -9,6 +9,9 @@ import SwiftUI
 
 struct AuthenticationView: View {
     @StateObject private var authVM = BiometricAuthVM()
+    @EnvironmentObject var toastVM: ToastMessageVM
+    @EnvironmentObject var reflVM: ReflectionViewModel
+    
     @AppStorage(Constants.UserDefaultsKey.appLockKey) private var isLockEnabled: Bool = false
     
     var body: some View {
@@ -17,33 +20,8 @@ struct AuthenticationView: View {
                 if authVM.isAuth {
                     MainTabView()
                 } else {
-                    VStack(spacing: 20) {
-                        Image(systemName: "lock.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 60, height: 60)
-                            .foregroundStyle(.gray)
-                        
-                        Text("Face ID or Touch ID가 필요합니다.")
-                            .font(.headline)
-                            .multilineTextAlignment(.center)
-                            .padding()
-                        
-                        Button {
-                            // action
-                            authVM.authenticate()
-                        } label: {
-                            Text("인증하기")
-                                .font(.title3)
-                                .foregroundStyle(.white)
-                                .padding()
-                                .frame(width: 180, height: 50)
-                                .background(.blue)
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-                        }
-                    }
+                    LockedView(authVM: authVM)
                 }
-                
             }
             else {
                 MainTabView()
@@ -57,4 +35,6 @@ struct AuthenticationView: View {
 
 #Preview {
     AuthenticationView()
+        .environmentObject(ToastMessageVM())
+        .environmentObject(ReflectionViewModel())
 }
