@@ -10,5 +10,6 @@ import Foundation
 struct Constants {
     public struct UserDefaultsKey {
         public static let reflectionVMKey = "reflections"
+        public static let appLockKey = "isLockEnabled"
     }
 }
