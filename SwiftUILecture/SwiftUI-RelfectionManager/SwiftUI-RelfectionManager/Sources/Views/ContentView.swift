@@ -26,6 +26,16 @@ struct ContentView: View {
                     }
                 }
             }
+            .overlay(content: {
+                Group {
+                    if vm.reflections.isEmpty {
+                        Text("작성된 회고가 없습니다.")
+                            .font(.title3)
+                            .foregroundColor(.gray)
+                            .padding(.bottom, 50)
+                    }
+                }
+            })
             .navigationTitle("내 회고 목록")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {

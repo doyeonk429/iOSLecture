@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AuthenticationView: View {
     @StateObject private var authVM = BiometricAuthVM()
-    @AppStorage(Constants.UserDefaultsKey.appLockKey) private var isLockEnabled: Bool = true
+    @AppStorage(Constants.UserDefaultsKey.appLockKey) private var isLockEnabled: Bool = false
     
     var body: some View {
         VStack {
