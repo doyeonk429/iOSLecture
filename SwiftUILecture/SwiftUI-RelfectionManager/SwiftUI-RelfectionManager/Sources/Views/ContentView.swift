@@ -26,15 +26,20 @@ struct ContentView: View {
                     }
                 }
             }
-        } // : naviStack
-        .navigationTitle("내 회고 목록")
-        .toolbar {
-            NavigationLink("새 회고 작성하기") {
-                // dest
-                NewReflView()
-                    .environmentObject(vm)
+            .navigationTitle("내 회고 목록")
+            .navigationBarTitleDisplayMode(.large)
+            .toolbar {
+                NavigationLink {
+                    // dest
+                    NewReflView()
+                        .environmentObject(vm)
+                } label: {
+                    Image(systemName: "plus")
+                        .tint(.green)
+                }
             }
-        }.onAppear {
+        }
+        .onAppear {
             vm.fetchReflections()
         }
     }
