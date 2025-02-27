@@ -8,16 +8,17 @@
 import SwiftUI
 
 struct MainView: View {
-    @Binding var number: Double
+    @StateObject private var viewModel = CalculatorViewModel()
+
     var body: some View {
         GeometryReader { geometry in
             VStack {
                 Spacer()
-                Text("\(number)")
+                Text(viewModel.displayText)
                     .frame(width: geometry.size.width, alignment: .trailing)
                     .font(.system(size: 50))
                     .foregroundStyle(.white)
-                PadView()
+                PadView(viewModel: viewModel)
             } // : VStack
             .padding(.bottom, 30)
         } // : GeometryReader
@@ -26,5 +27,5 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView(number: .constant(0))
+    MainView()
 }
