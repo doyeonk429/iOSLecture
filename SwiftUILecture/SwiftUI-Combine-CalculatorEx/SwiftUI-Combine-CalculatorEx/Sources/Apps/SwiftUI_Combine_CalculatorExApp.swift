@@ -11,7 +11,7 @@ import SwiftUI
 struct SwiftUI_Combine_CalculatorExApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView(number: .constant(0))
+            MainView()
         }
     }
 }
