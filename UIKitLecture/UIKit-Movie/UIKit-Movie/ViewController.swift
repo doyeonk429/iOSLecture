@@ -6,14 +6,18 @@
 //
 
 import UIKit
+import SnapKit
+import Then
+import Combine
 
 class ViewController: UIViewController {
+    private var collectionView: UICollectionView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
+    
 
 }
 

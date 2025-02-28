@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		16F675D42D7173F500C2163F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 16F675D32D7173F500C2163F /* SnapKit */; };
+		16F675D72D71740800C2163F /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 16F675D62D71740800C2163F /* Then */; };
+		16F675DA2D717CDE00C2163F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 16F675D92D717CDE00C2163F /* SDWebImage */; };
+		16F675DC2D717CDE00C2163F /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 16F675DB2D717CDE00C2163F /* SDWebImageMapKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		16F675802D70590400C2163F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -65,6 +72,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16F675DA2D717CDE00C2163F /* SDWebImage in Frameworks */,
+				16F675D42D7173F500C2163F /* SnapKit in Frameworks */,
+				16F675DC2D717CDE00C2163F /* SDWebImageMapKit in Frameworks */,
+				16F675D72D71740800C2163F /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +136,10 @@
 			);
 			name = "UIKit-Movie";
 			packageProductDependencies = (
+				16F675D32D7173F500C2163F /* SnapKit */,
+				16F675D62D71740800C2163F /* Then */,
+				16F675D92D717CDE00C2163F /* SDWebImage */,
+				16F675DB2D717CDE00C2163F /* SDWebImageMapKit */,
 			);
 			productName = "UIKit-Movie";
 			productReference = 16F675662D70590100C2163F /* UIKit-Movie.app */;
@@ -208,6 +223,11 @@
 			);
 			mainGroup = 16F6755D2D70590100C2163F;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				16F675D22D7173F500C2163F /* XCRemoteSwiftPackageReference "SnapKit" */,
+				16F675D52D71740800C2163F /* XCRemoteSwiftPackageReference "Then" */,
+				16F675D82D717CDE00C2163F /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 16F675672D70590100C2163F /* Products */;
 			projectDirPath = "";
@@ -294,7 +314,6 @@
 				INFOPLIST_FILE = "UIKit-Movie/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,7 +341,6 @@
 				INFOPLIST_FILE = "UIKit-Movie/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -569,6 +587,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		16F675D22D7173F500C2163F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		16F675D52D71740800C2163F /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		16F675D82D717CDE00C2163F /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.21.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		16F675D32D7173F500C2163F /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16F675D22D7173F500C2163F /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		16F675D62D71740800C2163F /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16F675D52D71740800C2163F /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		16F675D92D717CDE00C2163F /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16F675D82D717CDE00C2163F /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		16F675DB2D717CDE00C2163F /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16F675D82D717CDE00C2163F /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 16F6755E2D70590100C2163F /* Project object */;
 }
