@@ -21,4 +21,15 @@ extension Movie {
         Movie(id: 7, title: "Dune", posterImageURL: "https://i.namu.wiki/i/1ZOJDCSjLBR4E0u7zMvv1puGcSQ_GhvjLnvO4lYOnnVWch8LBNMQKvjislmbYghU4kjS_2E0Kz-_3e7NmiovVw.webp"),
         Movie(id: 8, title: "Oppenheimer", posterImageURL: "https://ojsfile.ohmynews.com/STD_IMG_FILE/2023/1208/IE003237257_STD.jpg")
     ]
+    
+    static let genreMovies: [Movie] = [
+        Movie(id: 9, title: "Inception", posterImageURL: "https://newsimg.sedaily.com/2020/01/03/1YXI57X1TM_1.jpg"),
+        Movie(id: 10, title: "Avengers: Endgame", posterImageURL: "https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg"),
+        Movie(id: 11, title: "The Matrix", posterImageURL: "https://i.namu.wiki/i/5DuZBygj54Xy6L7JO6l1edR9l4nsfnx6xfViTgsCQq3MMFG9Vwo_Qb-1XY9LwXi-sZmO3wvd3eyIbD2C8OJyXw.webp"),
+        Movie(id: 12, title: "Mad Max: Fury Road", posterImageURL: "https://i.ebayimg.com/00/s/NzU1WDUwOQ==/z/2BQAAOSwQJhUkhhG/$_57.JPG?set_id=880000500F"),
+        Movie(id: 13, title: "Inception2", posterImageURL: "https://newsimg.sedaily.com/2020/01/03/1YXI57X1TM_1.jpg"),
+        Movie(id: 14, title: "Avengers3: Endgame", posterImageURL: "https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg"),
+        Movie(id: 15, title: "The Matrix2", posterImageURL: "https://i.namu.wiki/i/5DuZBygj54Xy6L7JO6l1edR9l4nsfnx6xfViTgsCQq3MMFG9Vwo_Qb-1XY9LwXi-sZmO3wvd3eyIbD2C8OJyXw.webp"),
+        Movie(id: 16, title: "Mad Max2: Fury Road", posterImageURL: "https://i.ebayimg.com/00/s/NzU1WDUwOQ==/z/2BQAAOSwQJhUkhhG/$_57.JPG?set_id=880000500F")
+    ]
 }

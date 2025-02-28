@@ -40,16 +40,19 @@ class MovieCell: UICollectionViewCell {
     }
     
     private func setupViews() {
+        contentView.backgroundColor = .brown
         [posterImageView, titleLabel].forEach { contentView.addSubview($0) }
         
         posterImageView.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
-            $0.height.equalTo(150)
+            $0.top.equalToSuperview().offset(8)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalToSuperview().multipliedBy(0.8)
         }
         
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(posterImageView.snp.bottom).offset(8)
-            $0.leading.trailing.bottom.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(8)
+            $0.leading.trailing.equalToSuperview()
         }
     }
     
