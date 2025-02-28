@@ -1,0 +1,65 @@
+//
+//  MovieCell.swift
+//  UIKit-Movie
+//
+//  Created by 김도연 on 2/28/25.
+//
+
+import UIKit
+import SnapKit
+import Then
+import Combine
+import SDWebImage
+
+enum CellID : String {
+    case movieCell = "MovieCell"
+}
+
+class MovieCell: UICollectionViewCell {
+    static let identifier = CellID.movieCell.rawValue
+    
+    private let posterImageView = UIImageView().then {
+        $0.contentMode = .scaleAspectFit
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 10
+    }
+    
+    private let titleLabel = UILabel().then {
+        $0.font = .boldSystemFont(ofSize: 14)
+        $0.textAlignment = .center
+        $0.numberOfLines = 2
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupViews()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupViews() {
+        [posterImageView, titleLabel].forEach { contentView.addSubview($0) }
+        
+        posterImageView.snp.makeConstraints {
+            $0.top.leading.trailing.equalToSuperview()
+            $0.height.equalTo(150)
+        }
+        
+        titleLabel.snp.makeConstraints {
+            $0.top.equalTo(posterImageView.snp.bottom).offset(8)
+            $0.leading.trailing.bottom.equalToSuperview()
+        }
+    }
+    
+    public func configure(with data: Movie) {
+        titleLabel.text = data.title
+        if let url = URL(string: data.posterImageURL) {
+            posterImageView.sd_setImage(with: url)
+        } else {
+            print("❌ 유효하지 않은 URL: \(data.posterImageURL)")
+        }
+    }
+    
+}
