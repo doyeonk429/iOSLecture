@@ -11,6 +11,8 @@
 		16F675D72D71740800C2163F /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 16F675D62D71740800C2163F /* Then */; };
 		16F675DA2D717CDE00C2163F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 16F675D92D717CDE00C2163F /* SDWebImage */; };
 		16F675DC2D717CDE00C2163F /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 16F675DB2D717CDE00C2163F /* SDWebImageMapKit */; };
+		16F678502D73078200C2163F /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 16F6784F2D73078200C2163F /* CombineMoya */; };
+		16F678522D73078200C2163F /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 16F678512D73078200C2163F /* Moya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +76,9 @@
 			files = (
 				16F675DA2D717CDE00C2163F /* SDWebImage in Frameworks */,
 				16F675D42D7173F500C2163F /* SnapKit in Frameworks */,
+				16F678522D73078200C2163F /* Moya in Frameworks */,
 				16F675DC2D717CDE00C2163F /* SDWebImageMapKit in Frameworks */,
+				16F678502D73078200C2163F /* CombineMoya in Frameworks */,
 				16F675D72D71740800C2163F /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +144,8 @@
 				16F675D62D71740800C2163F /* Then */,
 				16F675D92D717CDE00C2163F /* SDWebImage */,
 				16F675DB2D717CDE00C2163F /* SDWebImageMapKit */,
+				16F6784F2D73078200C2163F /* CombineMoya */,
+				16F678512D73078200C2163F /* Moya */,
 			);
 			productName = "UIKit-Movie";
 			productReference = 16F675662D70590100C2163F /* UIKit-Movie.app */;
@@ -227,6 +233,7 @@
 				16F675D22D7173F500C2163F /* XCRemoteSwiftPackageReference "SnapKit" */,
 				16F675D52D71740800C2163F /* XCRemoteSwiftPackageReference "Then" */,
 				16F675D82D717CDE00C2163F /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				16F6784E2D73078200C2163F /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 16F675672D70590100C2163F /* Products */;
@@ -613,6 +620,14 @@
 				minimumVersion = 5.21.0;
 			};
 		};
+		16F6784E2D73078200C2163F /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -635,6 +650,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 16F675D82D717CDE00C2163F /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImageMapKit;
+		};
+		16F6784F2D73078200C2163F /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16F6784E2D73078200C2163F /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		16F678512D73078200C2163F /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16F6784E2D73078200C2163F /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
