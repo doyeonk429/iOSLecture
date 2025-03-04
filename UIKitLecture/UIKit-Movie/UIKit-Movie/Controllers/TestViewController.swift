@@ -16,34 +16,37 @@ final class TestViewController: UIViewController {
     private let movieService = MovieService.shared
     private var movies: [DailyBoxOffice] = []
     
-    private let tableView = UITableView().then {
-        $0.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        $0.separatorStyle = .none
+    private let testView = TestView()
+    
+    override func loadView() {
+        view = testView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        fetchData()
+        fetchData(for: yesterday())
     }
     
     private func setupUI() {
-        view.backgroundColor = .white
         title = "일간 박스오피스 순위"
         
-        view.addSubview(tableView)
-        tableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
+        testView.tableView.dataSource = self
+        testView.tableView.delegate = self
         
-        tableView.dataSource = self
-        tableView.delegate = self
+        // ✅ 날짜 선택 시 API 호출
+        testView.datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
     }
     
-    private func fetchData() {
-//        let today = DateFormatter.customFormatter.string(from: Date()) // "yyyyMMdd" 형식 날짜 변환
+    @objc private func dateChanged() {
+        let selectedDate = testView.datePicker.date
+        fetchData(for: selectedDate)
+    }
+    
+    private func fetchData(for date: Date) {
+        let dateString = DateFormatter.customFormatter.string(from: date) // "yyyyMMdd" 형식으로 변환
         
-        movieService.fetchDailyBoxOffice(date: "20250225")
+        movieService.fetchDailyBoxOffice(date: dateString)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 switch completion {
@@ -54,12 +57,17 @@ final class TestViewController: UIViewController {
                 }
             }, receiveValue: { [weak self] movies in
                 self?.movies = movies
-                self?.tableView.reloadData()
+                self?.testView.tableView.reloadData()
             })
             .store(in: &cancellables)
     }
+    
+    private func yesterday() -> Date {
+        return Calendar.current.date(byAdding: .day, value: -1, to: Date())!
+    }
 }
 
+// MARK: - UITableViewDataSource
 extension TestViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
@@ -73,6 +81,7 @@ extension TestViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
 extension TestViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -82,13 +91,4 @@ extension TestViewController: UITableViewDelegate {
         
         navigationController?.pushViewController(movieDetailVC, animated: true)
     }
-}
-
-// ✅ DateFormatter 확장 (yyyyMMdd 형식 변환)
-extension DateFormatter {
-    static let customFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyyMMdd"
-        return formatter
-    }()
 }

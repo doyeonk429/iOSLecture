@@ -16,7 +16,7 @@ final class TestView: UIView {
     let datePicker = UIDatePicker().then {
         $0.datePickerMode = .date
         $0.preferredDatePickerStyle = .inline
-        $0.maximumDate = Date()
+        $0.maximumDate = Calendar.current.date(byAdding: .day, value: -1, to: Date())
         $0.locale = Locale(identifier: "ko_KR")
     }
     
