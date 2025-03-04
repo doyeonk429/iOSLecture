@@ -8,54 +8,54 @@
 import UIKit
 import SnapKit
 import Then
-import SDWebImage
+import Combine
 
-//class MovieDetailViewController: UIViewController {
-//    private let movie: Movie
-//    
-//    private let posterImageView = UIImageView().then {
-//        $0.contentMode = .scaleAspectFit
-//        $0.clipsToBounds = true
-//        $0.layer.cornerRadius = 10
-//    }
-//    
-//    private let titleLabel = UILabel().then {
-//        $0.font = .boldSystemFont(ofSize: 20)
-//        $0.textAlignment = .center
-//        $0.numberOfLines = 2
-//    }
-//
-//    init(movie: Movie) {
-//        self.movie = movie
-//        super.init(nibName: nil, bundle: nil)
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        setupUI()
-//        configureUI()
-//    }
-//
-//    private func setupUI() {
-//        self.navigationItem.title = movie.title
-//        
-//        view.backgroundColor = .systemBackground
-//        view.addSubview(posterImageView)
-//
-//        posterImageView.snp.makeConstraints {
-//            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(20)
-//            $0.centerX.equalToSuperview()
-//            $0.width.equalTo(200)
-//            $0.height.equalTo(300)
-//        }
-//    }
-//
-//    private func configureUI() {
-//        titleLabel.text = movie.title
-//        posterImageView.sd_setImage(with: URL(string: movie.posterImageURL))
-//    }
-//}
+class MovieDetailViewController: UIViewController {
+    private let movieId: String
+    private var cancellables = Set<AnyCancellable>()
+    
+    private let movieService = MovieService.shared
+    private let detailView = MovieDetailView()
+    
+    // MARK: - Init
+    init(movieId: String) {
+        self.movieId = movieId
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+        fetchMovieInfo()
+    }
+    
+    // MARK: - UI Setup
+    private func setupUI() {
+        view.backgroundColor = .systemBackground
+        view.addSubview(detailView)
+        
+        detailView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide).inset(16)
+        }
+    }
+    
+    // MARK: - API Call
+    private func fetchMovieInfo() {
+        movieService.fetchMovieDetail(movieId: movieId)
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                if case .failure(let error) = completion {
+                    print("❌ 영화 정보 요청 실패: \(error)")
+                }
+            }, receiveValue: { [weak self] movieInfo in
+                self?.detailView.configure(with: movieInfo)
+            })
+            .store(in: &cancellables)
+    }
+    
+}

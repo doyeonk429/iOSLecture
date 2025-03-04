@@ -29,7 +29,7 @@ final class TestViewController: UIViewController {
     
     private func setupUI() {
         view.backgroundColor = .white
-        title = "Box Office"
+        title = "일간 박스오피스 순위"
         
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
@@ -37,6 +37,7 @@ final class TestViewController: UIViewController {
         }
         
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
     private func fetchData() {
@@ -69,6 +70,17 @@ extension TestViewController: UITableViewDataSource {
         let movie = movies[indexPath.row]
         cell.textLabel?.text = "\(movie.rank). \(movie.movieNm)"
         return cell
+    }
+}
+
+extension TestViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let selectedMovie = movies[indexPath.row]
+        let movieDetailVC = MovieDetailViewController(movieId: selectedMovie.movieCd)
+        
+        navigationController?.pushViewController(movieDetailVC, animated: true)
     }
 }
 
