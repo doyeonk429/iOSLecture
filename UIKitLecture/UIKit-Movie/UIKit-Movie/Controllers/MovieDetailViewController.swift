@@ -46,9 +46,12 @@ class MovieDetailViewController: UIViewController {
     
     // MARK: - API Call
     private func fetchMovieInfo() {
+        startLoading()
         movieService.fetchMovieDetail(movieId: movieId)
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { completion in
+            .sink(receiveCompletion: { [weak self] completion in
+                self?.stopLoading()
+                
                 if case .failure(let error) = completion {
                     print("❌ 영화 정보 요청 실패: \(error)")
                 }

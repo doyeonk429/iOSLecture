@@ -18,10 +18,6 @@ final class TestViewController: UIViewController {
     
     private let testView = TestView()
     
-    override func loadView() {
-        view = testView
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -29,6 +25,12 @@ final class TestViewController: UIViewController {
     }
     
     private func setupUI() {
+        view.backgroundColor = .systemBackground
+        view.addSubview(testView)
+        testView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
+        
         title = "일간 박스오피스 순위"
         
         testView.tableView.dataSource = self
@@ -46,9 +48,13 @@ final class TestViewController: UIViewController {
     private func fetchData(for date: Date) {
         let dateString = DateFormatter.customFormatter.string(from: date) // "yyyyMMdd" 형식으로 변환
         
+        startLoading()
+        
         movieService.fetchDailyBoxOffice(date: dateString)
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { completion in
+            .sink(receiveCompletion: { [weak self] completion in
+                self?.stopLoading()
+                
                 switch completion {
                 case .finished:
                     break
