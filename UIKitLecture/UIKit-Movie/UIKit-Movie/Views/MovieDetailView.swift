@@ -85,7 +85,7 @@ final class MovieDetailView: UIView {
     // MARK: - Configure with Data
     func configure(with movie: MovieInfo) {
         titleLabel.text = movie.movieNm
-        infoLabel.text = "상영시간: \(movie.showTm)분 | 개봉일: \(movie.openDt)"
+        infoLabel.text = "상영시간: \(movie.showTm)분 | 개봉일: \(movie.openDt.toFormattedDate())"
         genreLabel.text = movie.genres.map { $0.genreNm }.joined(separator: ", ")
         directorLabel.text = "감독: \(movie.directors.first?.peopleNm ?? "정보 없음")"
         
