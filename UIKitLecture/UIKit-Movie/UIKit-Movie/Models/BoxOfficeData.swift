@@ -1,5 +1,5 @@
 //
-//  DummyModels.swift
+//  BoxOfficeData.swift
 //  UIKit-Movie
 //
 //  Created by 김도연 on 2/28/25.

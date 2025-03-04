@@ -28,7 +28,6 @@ struct MovieInfo: Codable {
     let directors: [Director]
     let actors: [Actor]
     
-    // ✅ 필요한 부분만 디코딩
     enum CodingKeys: String, CodingKey {
         case movieCd, movieNm, showTm, openDt, typeNm, genres, directors, actors
     }
@@ -50,7 +49,6 @@ struct Actor: Codable {
     let cast: String?
 }
 
-// ✅ 필요한 데이터만 가져오는 커스텀 디코딩 전략
 extension MovieInfo {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -63,11 +61,9 @@ extension MovieInfo {
         
         self.genres = try container.decode([Genre].self, forKey: .genres)
         
-        // ✅ 첫 번째 감독만 가져오기
         let allDirectors = try container.decode([Director].self, forKey: .directors)
         self.directors = allDirectors.prefix(1).map { $0 }
         
-        // ✅ 최대 5명의 배우만 가져오기
         let allActors = try container.decode([Actor].self, forKey: .actors)
         self.actors = allActors.prefix(5).map { $0 }
     }

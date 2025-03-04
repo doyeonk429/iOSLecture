@@ -35,6 +35,7 @@ final class TestViewController: UIViewController {
         
         testView.tableView.dataSource = self
         testView.tableView.delegate = self
+        testView.tableView.register(BoxOfficeTableViewCell.self, forCellReuseIdentifier: "BoxOfficeCell")
         
         // ✅ 날짜 선택 시 API 호출
         testView.datePicker.addTarget(self, action: #selector(dateChanged), for: .valueChanged)
@@ -75,17 +76,23 @@ final class TestViewController: UIViewController {
 
 // MARK: - UITableViewDataSource
 extension TestViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let movie = movies[indexPath.row]
-        cell.textLabel?.text = "\(movie.rank). \(movie.movieNm)"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BoxOfficeCell", for: indexPath) as? BoxOfficeTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.configure(with: movies[indexPath.row])
         return cell
     }
 }
+
 
 // MARK: - UITableViewDelegate
 extension TestViewController: UITableViewDelegate {
