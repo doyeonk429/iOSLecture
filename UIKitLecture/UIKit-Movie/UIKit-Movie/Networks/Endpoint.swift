@@ -11,6 +11,7 @@ import Moya
 
 enum MovieEndpoint {
     case getDailyBoxOffice(date: String)
+    case getMovieDetail(movieId: String)
 }
 
 extension MovieEndpoint: TargetType {
@@ -22,6 +23,8 @@ extension MovieEndpoint: TargetType {
         switch self {
         case .getDailyBoxOffice:
             return Domain.boxOfficePath
+        case .getMovieDetail:
+            return Domain.movieInfoPath
         }
     }
     
@@ -35,6 +38,11 @@ extension MovieEndpoint: TargetType {
             return .requestParameters(parameters: [
                 "key": Domain.apiKey,
                 "targetDt": date
+            ], encoding: URLEncoding.queryString)
+        case .getMovieDetail(let movieId):
+            return .requestParameters(parameters: [
+                "key": Domain.apiKey,
+                "movieCd": movieId
             ], encoding: URLEncoding.queryString)
         }
     }
