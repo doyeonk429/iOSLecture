@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import Combine
+import SwiftUI
 
 enum Operation: String {
     case add = "+"
@@ -15,6 +17,10 @@ enum Operation: String {
     case percent = "%"
 }
 
-struct CalculatorModel {
-    var currentExpression: String = "0"
+//struct CalculatorModel {
+//    var currentExpression: String = "0"
+//}
+
+final class CalculatorModel : ObservableObject {
+    @Published var currentExpression: String = "0"
 }
