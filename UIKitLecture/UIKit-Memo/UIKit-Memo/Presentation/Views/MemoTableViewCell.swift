@@ -8,7 +8,6 @@
 import UIKit
 import SnapKit
 import Then
-import SDWebImage
 
 final class MemoTableViewCell: UITableViewCell {
     static let identifier = "MemoTableViewCell"
@@ -65,7 +64,12 @@ final class MemoTableViewCell: UITableViewCell {
     }
     
     func configure(thumbnailURL: String, previewText: String, time: String) {
-        thumbnailImageView.sd_setImage(with: URL(string: thumbnailURL))
+        if let image = ImageManager.shared.loadImage(from: thumbnailURL) {
+            thumbnailImageView.image = image
+        } else {
+            thumbnailImageView.image = UIImage(systemName: "photo")
+        }
+        
         previewLabel.text = previewText
         timeLabel.text = time
     }

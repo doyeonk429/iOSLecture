@@ -8,7 +8,6 @@
 import UIKit
 import SnapKit
 import Then
-import SDWebImage
 
 final class MemoCollectionViewCell: UICollectionViewCell {
     static let identifier = "MemoCollectionViewCell"
@@ -38,6 +37,10 @@ final class MemoCollectionViewCell: UICollectionViewCell {
     }
 
     func configure(thumbnailURL: String) {
-        imageView.sd_setImage(with: URL(string: thumbnailURL))
+        if let image = ImageManager.shared.loadImage(from: thumbnailURL) {
+            imageView.image = image
+        } else {
+            imageView.image = UIImage(systemName: "photo")
+        }
     }
 }

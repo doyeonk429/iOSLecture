@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct Memo: Identifiable {
+    let id: String
+    let imageURL: String
+    let previewText: String
+    let date: Date
+}

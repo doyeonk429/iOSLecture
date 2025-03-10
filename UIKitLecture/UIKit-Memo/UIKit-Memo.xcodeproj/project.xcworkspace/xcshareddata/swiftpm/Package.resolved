@@ -1,24 +1,6 @@
 {
-  "originHash" : "5d36262a8130fc2618f9a6b0f28b3ef5c48a853298078617e699415ef93ea3a2",
+  "originHash" : "2ad69c0deaec8838f2417eb6e8d288b30a36442bc22243bc0f5ee813f88e20a7",
   "pins" : [
-    {
-      "identity" : "nvactivityindicatorview",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ninjaprox/NVActivityIndicatorView",
-      "state" : {
-        "revision" : "121455c4e630fcb95aaefd7e4257b0c2e3cfe6d5",
-        "version" : "5.2.0"
-      }
-    },
-    {
-      "identity" : "sdwebimage",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SDWebImage/SDWebImage.git",
-      "state" : {
-        "revision" : "cac9a55a3ae92478a2c95042dcc8d9695d2129ca",
-        "version" : "5.21.0"
-      }
-    },
     {
       "identity" : "snapkit",
       "kind" : "remoteSourceControl",
