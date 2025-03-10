@@ -19,9 +19,17 @@ final class MemoListView: UIView {
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 10
-        $0.setCollectionViewLayout(layout, animated: false)
+        
+        let itemsPerRow: CGFloat = 3
+        let spacing: CGFloat = layout.minimumInteritemSpacing * (itemsPerRow - 1)
+        let totalPadding: CGFloat = 16 * 2
+        let itemWidth = (UIScreen.main.bounds.width - spacing - totalPadding) / itemsPerRow
+        
+        layout.itemSize = CGSize(width: itemWidth, height: itemWidth)
+        $0.collectionViewLayout = layout
+        
         $0.register(MemoCollectionViewCell.self, forCellWithReuseIdentifier: MemoCollectionViewCell.identifier)
-        $0.isHidden = true  // 초기에는 숨김
+        $0.isHidden = true
     }
     
     override init(frame: CGRect) {
@@ -35,10 +43,7 @@ final class MemoListView: UIView {
     
     private func setupUI() {
         backgroundColor = .systemBackground
-        
-        [tableView, collectionView].forEach {
-            self.addSubview($0)
-        }
+        addSubviews(tableView, collectionView)
 
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
