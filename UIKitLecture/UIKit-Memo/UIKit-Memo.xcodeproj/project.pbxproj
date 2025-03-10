@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16F6847D2D7E773900C2163F /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 16F6847C2D7E773900C2163F /* NVActivityIndicatorView */; };
-		16F6847F2D7E773900C2163F /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 16F6847E2D7E773900C2163F /* NVActivityIndicatorViewExtended */; };
-		16F684822D7E774A00C2163F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 16F684812D7E774A00C2163F /* SDWebImage */; };
 		16F684852D7E775700C2163F /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 16F684842D7E775700C2163F /* Then */; };
 		16F684882D7E776B00C2163F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 16F684872D7E776B00C2163F /* SnapKit */; };
 /* End PBXBuildFile section */
@@ -31,9 +28,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16F684822D7E774A00C2163F /* SDWebImage in Frameworks */,
-				16F6847D2D7E773900C2163F /* NVActivityIndicatorView in Frameworks */,
-				16F6847F2D7E773900C2163F /* NVActivityIndicatorViewExtended in Frameworks */,
 				16F684852D7E775700C2163F /* Then in Frameworks */,
 				16F684882D7E776B00C2163F /* SnapKit in Frameworks */,
 			);
@@ -78,9 +72,6 @@
 			);
 			name = "UIKit-Memo";
 			packageProductDependencies = (
-				16F6847C2D7E773900C2163F /* NVActivityIndicatorView */,
-				16F6847E2D7E773900C2163F /* NVActivityIndicatorViewExtended */,
-				16F684812D7E774A00C2163F /* SDWebImage */,
 				16F684842D7E775700C2163F /* Then */,
 				16F684872D7E776B00C2163F /* SnapKit */,
 			);
@@ -113,8 +104,6 @@
 			mainGroup = 16F683EC2D7E62C300C2163F;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				16F6847B2D7E773900C2163F /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
-				16F684802D7E774A00C2163F /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				16F684832D7E775700C2163F /* XCRemoteSwiftPackageReference "Then" */,
 				16F684862D7E776B00C2163F /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
@@ -344,22 +333,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		16F6847B2D7E773900C2163F /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.2.0;
-			};
-		};
-		16F684802D7E774A00C2163F /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.21.0;
-			};
-		};
 		16F684832D7E775700C2163F /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
@@ -379,21 +352,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		16F6847C2D7E773900C2163F /* NVActivityIndicatorView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 16F6847B2D7E773900C2163F /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
-			productName = NVActivityIndicatorView;
-		};
-		16F6847E2D7E773900C2163F /* NVActivityIndicatorViewExtended */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 16F6847B2D7E773900C2163F /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
-			productName = NVActivityIndicatorViewExtended;
-		};
-		16F684812D7E774A00C2163F /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 16F684802D7E774A00C2163F /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
-		};
 		16F684842D7E775700C2163F /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 16F684832D7E775700C2163F /* XCRemoteSwiftPackageReference "Then" */;
