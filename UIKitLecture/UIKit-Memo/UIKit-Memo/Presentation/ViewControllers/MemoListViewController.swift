@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 import Combine
 
 final class MemoListViewController: UIViewController {
@@ -28,17 +29,23 @@ final class MemoListViewController: UIViewController {
         barButtonSystemItem: .add, target: self, action: #selector(addMemo)
     )
 
-    override func loadView() {
-        view = memoListView
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         setupNavigation()
         bindViewModel()
         setDelegate()
         
         viewModel.input.fetchMemos.send(())
+    }
+    
+    private func setupUI() {
+        view.backgroundColor = .systemBackground
+        view.addSubview(memoListView)
+        
+        memoListView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
     }
 
     private func setupNavigation() {

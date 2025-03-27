@@ -10,6 +10,7 @@ import SnapKit
 import Then
 
 final class MemoEditView: UIView {
+    //MARK: - UI components 선언
     let imageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.clipsToBounds = true
@@ -30,6 +31,7 @@ final class MemoEditView: UIView {
         $0.backgroundColor = .clear
     }
     
+    //MARK: - init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -39,7 +41,11 @@ final class MemoEditView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - setupUI
     
+    //MARK: - setupLayout
+    
+    //MARK: - configure
     private func setupUI() {
         backgroundColor = .systemBackground
         addSubviews(imageView, dateLabel, textView)

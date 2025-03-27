@@ -7,14 +7,17 @@
 
 import UIKit
 import PhotosUI
+import SnapKit
 import Combine
 
 class MemoEditViewController: UIViewController {
+    //MARK: - DI
     private let editView = MemoEditView()
     private var memo: Memo?
     private let viewModel = MemoEditViewModel()
     private var cancellables = Set<AnyCancellable>()
     
+    //MARK: - init
     init(memo: Memo? = nil) {
         self.memo = memo
         super.init(nibName: nil, bundle: nil)
@@ -24,10 +27,7 @@ class MemoEditViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func loadView() {
-        view = editView
-    }
-
+    //MARK: - view lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigation()
@@ -35,7 +35,18 @@ class MemoEditViewController: UIViewController {
         setupData()
         bindViewModel()
     }
+    
+    //MARK: - setupUI
+    private func setupUI() {
+        view.backgroundColor = .systemBackground
+        view.addSubview(editView)
+        
+        editView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
+    }
 
+    //MARK: - setupNavigation
     private func setupNavigation() {
         title = memo == nil ? "메모 작성" : "메모 수정"
 
