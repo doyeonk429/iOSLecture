@@ -6,61 +6,41 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		16F684852D7E775700C2163F /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 16F684842D7E775700C2163F /* Then */; };
-		16F684882D7E776B00C2163F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 16F684872D7E776B00C2163F /* SnapKit */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
-		16F683F52D7E62C300C2163F /* UIKit-Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UIKit-Memo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		16ACDD4E2D94E69C00104179 /* SwiftUIKitPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIKitPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		16F685282D7E86A100C2163F /* Exceptions for "UIKit-Memo" folder in "UIKit-Memo" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 16F683F42D7E62C300C2163F /* UIKit-Memo */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		16F683F72D7E62C300C2163F /* UIKit-Memo */ = {
+		16ACDD502D94E69C00104179 /* SwiftUIKitPractice */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				16F685282D7E86A100C2163F /* Exceptions for "UIKit-Memo" folder in "UIKit-Memo" target */,
-			);
-			path = "UIKit-Memo";
+			path = SwiftUIKitPractice;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		16F683F22D7E62C300C2163F /* Frameworks */ = {
+		16ACDD4B2D94E69C00104179 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16F684852D7E775700C2163F /* Then in Frameworks */,
-				16F684882D7E776B00C2163F /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		16F683EC2D7E62C300C2163F = {
+		16ACDD452D94E69C00104179 = {
 			isa = PBXGroup;
 			children = (
-				16F683F72D7E62C300C2163F /* UIKit-Memo */,
-				16F683F62D7E62C300C2163F /* Products */,
+				16ACDD502D94E69C00104179 /* SwiftUIKitPractice */,
+				16ACDD4F2D94E69C00104179 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		16F683F62D7E62C300C2163F /* Products */ = {
+		16ACDD4F2D94E69C00104179 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				16F683F52D7E62C300C2163F /* UIKit-Memo.app */,
+				16ACDD4E2D94E69C00104179 /* SwiftUIKitPractice.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,70 +48,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		16F683F42D7E62C300C2163F /* UIKit-Memo */ = {
+		16ACDD4D2D94E69C00104179 /* SwiftUIKitPractice */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 16F6840B2D7E62C400C2163F /* Build configuration list for PBXNativeTarget "UIKit-Memo" */;
+			buildConfigurationList = 16ACDD5C2D94E69D00104179 /* Build configuration list for PBXNativeTarget "SwiftUIKitPractice" */;
 			buildPhases = (
-				16F683F12D7E62C300C2163F /* Sources */,
-				16F683F22D7E62C300C2163F /* Frameworks */,
-				16F683F32D7E62C300C2163F /* Resources */,
+				16ACDD4A2D94E69C00104179 /* Sources */,
+				16ACDD4B2D94E69C00104179 /* Frameworks */,
+				16ACDD4C2D94E69C00104179 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				16F683F72D7E62C300C2163F /* UIKit-Memo */,
+				16ACDD502D94E69C00104179 /* SwiftUIKitPractice */,
 			);
-			name = "UIKit-Memo";
+			name = SwiftUIKitPractice;
 			packageProductDependencies = (
-				16F684842D7E775700C2163F /* Then */,
-				16F684872D7E776B00C2163F /* SnapKit */,
 			);
-			productName = "UIKit-Memo";
-			productReference = 16F683F52D7E62C300C2163F /* UIKit-Memo.app */;
+			productName = SwiftUIKitPractice;
+			productReference = 16ACDD4E2D94E69C00104179 /* SwiftUIKitPractice.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		16F683ED2D7E62C300C2163F /* Project object */ = {
+		16ACDD462D94E69C00104179 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					16F683F42D7E62C300C2163F = {
+					16ACDD4D2D94E69C00104179 = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
-			buildConfigurationList = 16F683F02D7E62C300C2163F /* Build configuration list for PBXProject "UIKit-Memo" */;
+			buildConfigurationList = 16ACDD492D94E69C00104179 /* Build configuration list for PBXProject "SwiftUIKitPractice" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 16F683EC2D7E62C300C2163F;
+			mainGroup = 16ACDD452D94E69C00104179;
 			minimizedProjectReferenceProxies = 1;
-			packageReferences = (
-				16F684832D7E775700C2163F /* XCRemoteSwiftPackageReference "Then" */,
-				16F684862D7E776B00C2163F /* XCRemoteSwiftPackageReference "SnapKit" */,
-			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 16F683F62D7E62C300C2163F /* Products */;
+			productRefGroup = 16ACDD4F2D94E69C00104179 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				16F683F42D7E62C300C2163F /* UIKit-Memo */,
+				16ACDD4D2D94E69C00104179 /* SwiftUIKitPractice */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		16F683F32D7E62C300C2163F /* Resources */ = {
+		16ACDD4C2D94E69C00104179 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -141,7 +115,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		16F683F12D7E62C300C2163F /* Sources */ = {
+		16ACDD4A2D94E69C00104179 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -151,57 +125,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		16F6840C2D7E62C400C2163F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 83K577A944;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "UIKit-Memo/Info.plist";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.doyeonkim.UIKit-Memo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		16F6840D2D7E62C400C2163F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 83K577A944;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "UIKit-Memo/Info.plist";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.doyeonkim.UIKit-Memo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		16F6840E2D7E62C400C2163F /* Debug */ = {
+		16ACDD5A2D94E69D00104179 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -264,7 +188,7 @@
 			};
 			name = Debug;
 		};
-		16F6840F2D7E62C400C2163F /* Release */ = {
+		16ACDD5B2D94E69D00104179 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -320,60 +244,90 @@
 			};
 			name = Release;
 		};
+		16ACDD5D2D94E69D00104179 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIKitPractice/Preview Content\"";
+				DEVELOPMENT_TEAM = 83K577A944;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "사진을 촬영하기 위해 카메라 접근이 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앨범에서 사진을 선택하기 위해 접근이 필요합니다.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.doyeonk429.SwiftUIKitPractice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		16ACDD5E2D94E69D00104179 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIKitPractice/Preview Content\"";
+				DEVELOPMENT_TEAM = 83K577A944;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "사진을 촬영하기 위해 카메라 접근이 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앨범에서 사진을 선택하기 위해 접근이 필요합니다.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.doyeonk429.SwiftUIKitPractice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		16F683F02D7E62C300C2163F /* Build configuration list for PBXProject "UIKit-Memo" */ = {
+		16ACDD492D94E69C00104179 /* Build configuration list for PBXProject "SwiftUIKitPractice" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				16F6840E2D7E62C400C2163F /* Debug */,
-				16F6840F2D7E62C400C2163F /* Release */,
+				16ACDD5A2D94E69D00104179 /* Debug */,
+				16ACDD5B2D94E69D00104179 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		16F6840B2D7E62C400C2163F /* Build configuration list for PBXNativeTarget "UIKit-Memo" */ = {
+		16ACDD5C2D94E69D00104179 /* Build configuration list for PBXNativeTarget "SwiftUIKitPractice" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				16F6840C2D7E62C400C2163F /* Debug */,
-				16F6840D2D7E62C400C2163F /* Release */,
+				16ACDD5D2D94E69D00104179 /* Debug */,
+				16ACDD5E2D94E69D00104179 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		16F684832D7E775700C2163F /* XCRemoteSwiftPackageReference "Then" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/devxoul/Then";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
-		16F684862D7E776B00C2163F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.7.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		16F684842D7E775700C2163F /* Then */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 16F684832D7E775700C2163F /* XCRemoteSwiftPackageReference "Then" */;
-			productName = Then;
-		};
-		16F684872D7E776B00C2163F /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 16F684862D7E776B00C2163F /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 16F683ED2D7E62C300C2163F /* Project object */;
+	rootObject = 16ACDD462D94E69C00104179 /* Project object */;
 }
