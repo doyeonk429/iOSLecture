@@ -14,7 +14,7 @@ xcuserdata/
 *.dSYM
 *.plist
 *.DS_Store
-
+**/GoogleService-Info.plist
 ## Playgrounds
 timeline.xctimeline
 playground.xcworkspace
