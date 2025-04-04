@@ -23,7 +23,7 @@ jobs:
           echo "🧪 Starting Tests at $(date)" > "$LOG_FILE"
           xcodebuild test \
             -scheme toto-combine \
-            -destination 'platform=iOS Simulator,name=iPhone 15' \
+            -destination 'platform=iOS Simulator,OS=latest' \
             >> "$LOG_FILE" 2>&1
           echo "✅ Finished Tests at $(date)" >> "$LOG_FILE"
 
