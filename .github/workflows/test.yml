@@ -17,7 +17,7 @@ jobs:
         run: sudo xcode-select -s /Applications/Xcode_15.2.app
 
       - name: List available schemes (디버그용)
-        run: xcodebuild -list -project toto-combine.xcodeproj
+        run: xcodebuild -list -project SwiftUILecture/toto-combine/toto-combine.xcodeproj
 
       - name: Run Tests and Save Logs
         run: |
@@ -25,7 +25,7 @@ jobs:
           LOG_FILE="./Logs/toto-combine/test-log-$(date +%Y-%m-%d_%H-%M-%S).log"
           echo "🧪 Starting Tests at $(date)" > "$LOG_FILE"
           xcodebuild test \
-            -project toto-combine.xcodeproj \
+            -project SwiftUILecture/toto-combine/toto-combine.xcodeproj \
             -scheme toto-combine \
             -destination 'platform=iOS Simulator,OS=latest' \
             >> "$LOG_FILE" 2>&1
