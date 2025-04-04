@@ -28,7 +28,7 @@ jobs:
           echo "✅ Finished Tests at $(date)" >> "$LOG_FILE"
 
       - name: Upload Log Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4.6.2
         with:
           name: test-logs
           path: Logs/toto-combine/*.log
