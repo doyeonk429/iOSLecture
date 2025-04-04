@@ -15,10 +15,12 @@
 		168ABA9B2D9BAD5F00B05186 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 168ABA9A2D9BAD5F00B05186 /* FirebaseFirestoreCombine-Community */; };
 		168ABAA92D9BB3D900B05186 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 168ABAA82D9BB3D900B05186 /* FirebaseStorage */; };
 		168ABAAB2D9BB3D900B05186 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 168ABAAA2D9BB3D900B05186 /* FirebaseStorageCombine-Community */; };
+		168AC0472D9F6BEB00B05186 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 168AC0462D9F6BEB00B05186 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		168ABA7E2D9BAC3600B05186 /* toto-combine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "toto-combine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		168AC0462D9F6BEB00B05186 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -51,6 +53,7 @@
 		168ABA752D9BAC3500B05186 = {
 			isa = PBXGroup;
 			children = (
+				168AC0462D9F6BEB00B05186 /* GoogleService-Info.plist */,
 				168ABA802D9BAC3600B05186 /* toto-combine */,
 				168ABA7F2D9BAC3600B05186 /* Products */,
 			);
@@ -139,6 +142,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				168AC0472D9F6BEB00B05186 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

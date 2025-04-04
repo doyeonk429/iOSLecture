@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseStorage
+import FirebaseAuth
 import UIKit
 
 class NoteRepository: ObservableObject {
@@ -19,7 +20,8 @@ class NoteRepository: ObservableObject {
 
     // 1. 노트 추가
     func addNote(title: String, content: String, thumbnailImage: UIImage) {
-        guard let imageData = thumbnailImage.jpegData(compressionQuality: 0.8) else { return }
+        guard let imageData = thumbnailImage.jpegData(compressionQuality: 0.5) else { return }
+        guard let uid = Auth.auth().currentUser?.uid else { return }
         let imageID = UUID().uuidString
         let imageRef = storage.reference().child("thumbnails/\(imageID).jpg")
 
@@ -38,13 +40,15 @@ class NoteRepository: ObservableObject {
                 }
 
                 // 3. Firestore에 노트 데이터 저장
+                
                 let docRef = self?.db.collection(self?.notesCollection ?? "").document()
                 let noteData: [String: Any] = [
                     "id": docRef?.documentID ?? UUID().uuidString,
                     "title": title,
                     "content": content,
                     "thumbnailURL": url.absoluteString,
-                    "createdAt": Timestamp(date: Date())
+                    "createdAt": Timestamp(date: Date()),
+                    "ownerUID": uid
                 ]
                 docRef?.setData(noteData)
             }
@@ -53,7 +57,10 @@ class NoteRepository: ObservableObject {
 
     // 2. 노트 불러오기 (최신순)
     func fetchNotes() {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
         db.collection(notesCollection)
+            .whereField("ownerUID", isEqualTo: uid)
             .order(by: "createdAt", descending: true)
             .getDocuments { [weak self] snapshot, error in
                 if let error = error {
@@ -61,25 +68,8 @@ class NoteRepository: ObservableObject {
                     return
                 }
                 
-                self?.notes = snapshot?.documents.compactMap { doc -> Note? in
-                    let data = doc.data()
-                    guard
-                        let title = data["title"] as? String,
-                        let content = data["content"] as? String,
-                        let urlString = data["thumbnailURL"] as? String,
-                        let url = URL(string: urlString),
-                        let timestamp = data["createdAt"] as? Timestamp
-                    else {
-                        return nil
-                    }
-                    
-                    return Note(
-                        id: doc.documentID,
-                        title: title,
-                        content: content,
-                        thumbnailURL: url,
-                        createdAt: timestamp.dateValue()
-                    )
+                self?.notes = snapshot?.documents.compactMap { doc in
+                    try? doc.data(as: Note.self)
                 } ?? []
             }
     }

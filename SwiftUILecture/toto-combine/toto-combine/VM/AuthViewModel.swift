@@ -19,10 +19,12 @@ class AuthViewModel: ObservableObject {
     
     init() {
         authStateListener = Auth.auth().addStateDidChangeListener { [weak self] _, user in
-            self?.user = user
+            Task { @MainActor in
+                self?.user = user
+            }
         }
     }
-    
+
     deinit {
         if let handle = authStateListener {
             Auth.auth().removeStateDidChangeListener(handle)
@@ -30,28 +32,33 @@ class AuthViewModel: ObservableObject {
     }
 
     func signUp(email: String, password: String) {
-        Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
-            if let error = error {
-                self?.errorMessage = error.localizedDescription
-                self?.showErrorAlert = true
-                return
-            }
-            
-            DispatchQueue.main.async {
-                self?.user = result?.user
+        Task {
+            do {
+                let result = try await Auth.auth().createUser(withEmail: email, password: password)
+                await MainActor.run {
+                    self.user = result.user
+                }
+            } catch {
+                await MainActor.run {
+                    self.errorMessage = error.localizedDescription
+                    self.showErrorAlert = true
+                }
             }
         }
     }
 
     func signIn(email: String, password: String) {
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] result, error in
-            if let error = error {
-                self?.errorMessage = error.localizedDescription
-                self?.showErrorAlert = true
-                return
-            }
-            DispatchQueue.main.async {
-                self?.user = result?.user
+        Task {
+            do {
+                let result = try await Auth.auth().signIn(withEmail: email, password: password)
+                await MainActor.run {
+                    self.user = result.user
+                }
+            } catch {
+                await MainActor.run {
+                    self.errorMessage = error.localizedDescription
+                    self.showErrorAlert = true
+                }
             }
         }
     }
@@ -73,14 +80,17 @@ class AuthViewModel: ObservableObject {
             return
         }
 
-        Auth.auth().sendPasswordReset(withEmail: email) { [weak self] error in
-            DispatchQueue.main.async {
-                if let error = error {
-                    self?.errorMessage = error.localizedDescription
-                    self?.showErrorAlert = true
-                } else {
-                    self?.errorMessage = "비밀번호 재설정 메일을 보냈습니다."
-                    self?.showErrorAlert = true
+        Task {
+            do {
+                try await Auth.auth().sendPasswordReset(withEmail: email)
+                await MainActor.run {
+                    self.errorMessage = "비밀번호 재설정 메일을 보냈습니다."
+                    self.showErrorAlert = true
+                }
+            } catch {
+                await MainActor.run {
+                    self.errorMessage = error.localizedDescription
+                    self.showErrorAlert = true
                 }
             }
         }
@@ -93,15 +103,18 @@ class AuthViewModel: ObservableObject {
             return
         }
 
-        user.delete { [weak self] error in
-            DispatchQueue.main.async {
-                if let error = error {
-                    self?.errorMessage = error.localizedDescription
-                    self?.showErrorAlert = true
-                } else {
-                    self?.user = nil
-                    self?.errorMessage = "계정이 삭제되었습니다."
-                    self?.showErrorAlert = true
+        Task {
+            do {
+                try await user.delete()
+                await MainActor.run {
+                    self.user = nil
+                    self.errorMessage = "계정이 삭제되었습니다."
+                    self.showErrorAlert = true
+                }
+            } catch {
+                await MainActor.run {
+                    self.errorMessage = error.localizedDescription
+                    self.showErrorAlert = true
                 }
             }
         }

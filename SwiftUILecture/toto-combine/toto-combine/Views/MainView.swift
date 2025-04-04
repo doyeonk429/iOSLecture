@@ -18,20 +18,31 @@ struct MainView: View {
                 let cellSize = geometry.size.width / 3
                 
                 ScrollView {
-                    LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 0), count: 3), spacing: 0) {
-                        ForEach(noteRepo.notes) { note in
-                            AsyncImage(url: note.thumbnailURL) { image in
-                                image
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: cellSize, height: cellSize)
-                                    .clipped()
-                            } placeholder: {
-                                Color.gray.opacity(0.2)
-                                    .frame(width: cellSize, height: cellSize)
-                            }
-                            .onTapGesture {
-                                path.append(note) // ✅ note를 path에 추가하면 상세 뷰로 이동
+                    if noteRepo.notes.isEmpty {
+                        VStack {
+                            Spacer().frame(height: 100)
+                            Text("작성된 노트가 없습니다!")
+                                .font(.body)
+                                .foregroundColor(.gray)
+                            Spacer()
+                        }
+                        .frame(maxWidth: .infinity)
+                    } else {
+                        LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 0), count: 3), spacing: 0) {
+                            ForEach(noteRepo.notes) { note in
+                                AsyncImage(url: note.thumbnailURL) { image in
+                                    image
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: cellSize, height: cellSize)
+                                        .clipped()
+                                } placeholder: {
+                                    Color.gray.opacity(0.2)
+                                        .frame(width: cellSize, height: cellSize)
+                                }
+                                .onTapGesture {
+                                    path.append(note)
+                                }
                             }
                         }
                     }
