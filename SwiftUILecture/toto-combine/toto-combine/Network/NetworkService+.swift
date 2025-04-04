@@ -18,6 +18,11 @@ extension NetworkService {
                   (200..<300).contains(httpResponse.statusCode) else {
                 throw NetworkError.requestFailed(statusCode: (response as? HTTPURLResponse)?.statusCode ?? -1)
             }
+            
+            if T.self == Void.self {
+                return () as! T
+            }
+            
             return try JSONDecoder().decode(T.self, from: data)
         } catch let error as NetworkError {
             throw error
@@ -33,14 +38,22 @@ extension NetworkService {
         do {
             let request = try buildRequest(from: target)
             return URLSession.shared.dataTaskPublisher(for: request)
-                .tryMap { result in
-                    guard let httpResponse = result.response as? HTTPURLResponse,
-                          (200..<300).contains(httpResponse.statusCode) else {
-                        throw NetworkError.requestFailed(statusCode: (result.response as? HTTPURLResponse)?.statusCode ?? -1)
+                .tryMap { output in
+                    guard let httpResponse = output.response as? HTTPURLResponse else {
+                        throw NetworkError.requestFailed(statusCode: -1)
                     }
-                    return result.data
+
+                    guard (200..<300).contains(httpResponse.statusCode) else {
+                        throw NetworkError.requestFailed(statusCode: httpResponse.statusCode)
+                    }
+
+                    // ✅ Void이면 디코딩 생략
+                    if T.self == Void.self {
+                        return () as! T
+                    }
+
+                    return try JSONDecoder().decode(T.self, from: output.data)
                 }
-                .decode(type: T.self, decoder: JSONDecoder())
                 .mapError { error in
                     if let decodingError = error as? DecodingError {
                         return .decodingFailed

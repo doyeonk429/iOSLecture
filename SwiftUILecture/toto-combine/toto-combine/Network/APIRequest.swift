@@ -11,14 +11,14 @@ struct APIRequest: TargetType {
     var baseURL: URL
     var path: String
     var method: HTTPMethod
-    var task: Task
+    var task: RequestTask
     var headers: [String: String]?
 
     init(
         baseURL: URL = URL(string: "https://jsonplaceholder.typicode.com")!,
         path: String,
         method: HTTPMethod = .get,
-        task: Task = .plain,
+        task: RequestTask = .plain,
         headers: [String: String]? = nil
     ) {
         self.baseURL = baseURL

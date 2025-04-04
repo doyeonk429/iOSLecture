@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "730BD24F-4E51-4A94-961C-44135D014129",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:toto-combine.xcodeproj",
+      "identifier" : "168ABA7D2D9BAC3600B05186",
+      "name" : "toto-combine"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:toto-combine.xcodeproj",
+        "identifier" : "168AC08F2D9FA21100B05186",
+        "name" : "toto-combineTests"
+      }
+    }
+  ],
+  "version" : 1
+}
