@@ -16,9 +16,6 @@ jobs:
       - name: Set up Xcode
         run: sudo xcode-select -s /Applications/Xcode_15.2.app
 
-      - name: List available schemes (디버그용)
-        run: xcodebuild -list -project SwiftUILecture/toto-combine/toto-combine.xcodeproj
-
       - name: Run Tests and Save Logs
         run: |
           mkdir -p ./Logs/toto-combine
