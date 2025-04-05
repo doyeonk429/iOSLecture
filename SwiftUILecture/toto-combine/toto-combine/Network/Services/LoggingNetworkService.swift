@@ -12,7 +12,7 @@ import os
 final class LoggingNetworkService: NetworkService {
     private let wrapped: NetworkService
     private let logger = Logger(subsystem: "com.toto.combine", category: "Network")
-    private let enableFileLogging: Bool  // ✅ 텍스트파일 저장 여부
+    private let enableFileLogging: Bool
     
     init(wrapped: NetworkService, enableFileLogging: Bool = true) {
         self.wrapped = wrapped

@@ -41,16 +41,4 @@ enum FileLogger {
         }
     }
 
-    /// ✅ 테스트가 끝난 후 자동으로 텍스트 파일 열기
-    static func openLogFile() {
-        #if os(macOS)
-        let path = logFileURL.path
-        let task = Process()
-        task.launchPath = "/usr/bin/open"
-        task.arguments = [path]
-        try? task.run()
-        #endif
-    }
-    
-
 }

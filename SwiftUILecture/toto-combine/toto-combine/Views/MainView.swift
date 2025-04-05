@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @EnvironmentObject var noteRepo: NoteRepository
+    @StateObject var viewModel = NotesViewModel()
     @State private var showNewNote = false
     @State private var path: [Note] = []
     
@@ -18,7 +18,7 @@ struct MainView: View {
                 let cellSize = geometry.size.width / 3
                 
                 ScrollView {
-                    if noteRepo.notes.isEmpty {
+                    if viewModel.notes.isEmpty {
                         VStack {
                             Spacer().frame(height: 100)
                             Text("작성된 노트가 없습니다!")
@@ -29,7 +29,7 @@ struct MainView: View {
                         .frame(maxWidth: .infinity)
                     } else {
                         LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 0), count: 3), spacing: 0) {
-                            ForEach(noteRepo.notes) { note in
+                            ForEach(viewModel.notes) { note in
                                 AsyncImage(url: note.thumbnailURL) { image in
                                     image
                                         .resizable()
@@ -48,11 +48,11 @@ struct MainView: View {
                     }
                 }
                 .refreshable {
-                    noteRepo.fetchNotes()
+                    viewModel.fetchNotes()
                 }
                 .navigationTitle("노트")
                 .onAppear {
-                    noteRepo.fetchNotes()
+                    viewModel.fetchNotes()
                 }
                 .overlay(
                     Button(action: {
